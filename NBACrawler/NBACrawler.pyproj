@@ -22,9 +22,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DataManager.py">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="GameData.py" />
     <Compile Include="NBACrawler.py" />
   </ItemGroup>
   <PropertyGroup>
