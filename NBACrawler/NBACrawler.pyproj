@@ -24,6 +24,9 @@
   <ItemGroup>
     <Compile Include="GameData.py" />
     <Compile Include="NBACrawler.py" />
+    <Compile Include="NBARecordCrawler.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="SQLManager.py">
       <SubType>Code</SubType>
     </Compile>

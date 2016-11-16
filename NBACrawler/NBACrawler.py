@@ -31,7 +31,7 @@ def main():
     demo = ''
     for i in range(len(game_data.away_team_list)):
         demo+=(game_data.away_team_list[i] + game_data.away_sprd_list[i] + game_data.home_team_list[i] + game_data.home_sprd_list[i] + game_data.over_under_list[i] + game_data.away_total_streak_list[i] + game_data.home_total_streak_list[i] + game_data.away_season_record_list[i] + game_data.home_season_record_list[i] + '\n')
-        sqlManager.insert_game_date(game_data.away_team_list[i], game_data.home_team_list[i], game_data.away_sprd_list[i], game_data.home_sprd_list[i], game_data.over_under_list[i], game_data.away_total_streak_list[i], game_data.home_total_streak_list[i], game_data.away_season_record_list[i], game_data.home_season_record_list[i])
+        sqlManager.insert_game_data(game_data.away_team_list[i], game_data.home_team_list[i], game_data.away_sprd_list[i], game_data.home_sprd_list[i], game_data.over_under_list[i], game_data.away_total_streak_list[i], game_data.home_total_streak_list[i], game_data.away_season_record_list[i], game_data.home_season_record_list[i])
     print(demo.encode(sys.stdin.encoding, "replace").decode(sys.stdin.encoding))
     #with open("C:\\Users\\admin\\Documents\\NBA\\NBA_Day1.csv", 'a',
     #encoding='utf-8') as csvFile:
