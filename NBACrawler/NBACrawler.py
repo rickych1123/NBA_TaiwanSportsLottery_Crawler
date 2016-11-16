@@ -30,8 +30,8 @@ def main():
     resolve_data(data)
     demo = ''
     for i in range(len(game_data.away_team_list)):
-        demo+=(game_data.away_team_list[i] + game_data.away_sprd_list[i] + game_data.home_team_list[i] + game_data.home_sprd_list[i] + game_data.over_under_list[i] + game_data.away_total_streak_list[i] + game_data.home_total_streak_list[i] + game_data.away_court_streak_list[i] + game_data.home_court_streak_list[i] + '\n')
-        sqlManager.insert_game_date(game_data.away_team_list[i], game_data.home_team_list[i], game_data.away_sprd_list[i], game_data.home_sprd_list[i], game_data.over_under_list[i], game_data.away_total_streak_list[i], game_data.home_total_streak_list[i], game_data.away_court_streak_list[i], game_data.home_court_streak_list[i])
+        demo+=(game_data.away_team_list[i] + game_data.away_sprd_list[i] + game_data.home_team_list[i] + game_data.home_sprd_list[i] + game_data.over_under_list[i] + game_data.away_total_streak_list[i] + game_data.home_total_streak_list[i] + game_data.away_season_record_list[i] + game_data.home_season_record_list[i] + '\n')
+        sqlManager.insert_game_date(game_data.away_team_list[i], game_data.home_team_list[i], game_data.away_sprd_list[i], game_data.home_sprd_list[i], game_data.over_under_list[i], game_data.away_total_streak_list[i], game_data.home_total_streak_list[i], game_data.away_season_record_list[i], game_data.home_season_record_list[i])
     print(demo.encode(sys.stdin.encoding, "replace").decode(sys.stdin.encoding))
     #with open("C:\\Users\\admin\\Documents\\NBA\\NBA_Day1.csv", 'a',
     #encoding='utf-8') as csvFile:
@@ -57,7 +57,7 @@ def resolve_data(data):
         if(i % 22 == 5):
             game_data.away_total_streak_list.append(data_array[i])
         if(i % 22 == 6):
-            game_data.away_court_streak_list.append(data_array[i])
+            game_data.away_season_record_list.append(data_array[i])
         if(i % 22 == 11):
             if(data_array[i].strip() != ''):
                 game_data.home_team_list.append(data_array[i].strip())
@@ -75,7 +75,7 @@ def resolve_data(data):
         if(i % 22 == 16):
             game_data.home_total_streak_list.append(data_array[i])
         if(i % 22 == 17):
-            game_data.home_court_streak_list.append(data_array[i])
+            game_data.home_season_record_list.append(data_array[i])
 
 def RepresentsInt(s):
     try: 

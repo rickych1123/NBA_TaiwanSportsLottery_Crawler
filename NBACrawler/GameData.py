@@ -7,8 +7,8 @@ class GameData():
         self.over_under_list = []
         self.away_total_streak_list = []
         self.home_total_streak_list = []
-        self.away_court_streak_list = []
-        self.home_court_streak_list = []
+        self.away_season_record_list = []
+        self.home_season_record_list = []
         self.game_date_list = []
 
 
