@@ -33,9 +33,9 @@ def main():
         demo+=(game_data.away_team_list[i] + game_data.away_sprd_list[i] + game_data.home_team_list[i] + game_data.home_sprd_list[i] + game_data.over_under_list[i] + game_data.away_total_streak_list[i] + game_data.home_total_streak_list[i] + game_data.away_court_streak_list[i] + game_data.home_court_streak_list[i] + '\n')
         sqlManager.insert_game_date(game_data.away_team_list[i], game_data.home_team_list[i], game_data.away_sprd_list[i], game_data.home_sprd_list[i], game_data.over_under_list[i], game_data.away_total_streak_list[i], game_data.home_total_streak_list[i], game_data.away_court_streak_list[i], game_data.home_court_streak_list[i])
     print(demo.encode(sys.stdin.encoding, "replace").decode(sys.stdin.encoding))
-    with open("C:\\Users\\admin\\Documents\\NBA\\NBA_Day1.csv", 'a',
-    encoding='utf-8') as csvFile:
-        csvFile.write(demo)
+    #with open("C:\\Users\\admin\\Documents\\NBA\\NBA_Day1.csv", 'a',
+    #encoding='utf-8') as csvFile:
+    #    csvFile.write(demo)
 
 def resolve_data(data):
     data_array = data.split(',')
@@ -68,10 +68,10 @@ def resolve_data(data):
                     game_data.away_sprd_list.append(data_array[i][1:])
                  else:
                     game_data.over_under_list.append(data_array[i])
-             else:
-                  game_data.away_sprd_list.append('')
-                  game_data.home_sprd_list.append('')
-                  game_data.over_under_list.append('')
+             #else:
+                  #game_data.away_sprd_list.append('')
+                  #game_data.home_sprd_list.append('')
+                  #game_data.over_under_list.append('')
         if(i % 22 == 16):
             game_data.home_total_streak_list.append(data_array[i])
         if(i % 22 == 17):

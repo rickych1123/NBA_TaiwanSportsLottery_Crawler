@@ -9,7 +9,7 @@ class SQLManager():
         # prepare a cursor object using cursor() method
         cursor = db.cursor()
         # Prepare SQL query to INSERT a record into the database.
-        sql = """INSERT INTO GAME(AWAY_TEAM_NAME, 
+        sql = """REPLACE INTO GAME(AWAY_TEAM_NAME, 
                HOME_TEAM_NAME, AWAY_TEAM_SPRD, HOME_TEAM_SPRD, OVER_UNDER, AWAY_TEAM_TOTAL_STREAK, 
                HOME_TEAM_TOTAL_STREAK, AWAY_TEAM_COURT_STREAK, HOME_TEAM_COURT_STREAK, GAME_DATE) 
                VALUES ('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')""".format \
