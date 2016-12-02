@@ -2,7 +2,7 @@ import pymysql
 import datetime
 class SQLManager():
     def insert_game_data(self, away_team, home_team, away_sprd, home_sprd, over_under, away_total_streak, home_total_steak, away_season_record, home_season_record):
-        game_date = datetime.datetime.now() + datetime.timedelta(days=1)
+        game_date = datetime.datetime.now() #+ datetime.timedelta(days=1)
          # Open database connection
         db = pymysql.connect("localhost", "root", "", "nba_game_data",charset='utf8')
 

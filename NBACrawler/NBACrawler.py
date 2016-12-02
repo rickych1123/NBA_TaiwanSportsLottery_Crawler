@@ -36,7 +36,6 @@ def main():
     #with open("C:\\Users\\admin\\Documents\\NBA\\NBA_Day1.csv", 'a',
     #encoding='utf-8') as csvFile:
     #    csvFile.write(demo)
-
 def resolve_data(data):
     data_array = data.split(',')
     for i in range(len(data_array)):
