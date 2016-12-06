@@ -9,7 +9,7 @@ from SQLManager import SQLManager
 game_data = GameData()
 
 def main():
-    res = requests.get('http://www.fengyuncai.com/asp/nba.asp')
+    res = requests.get ('http://www.fengyuncai.com/asp/nba.asp')
     res.encoding = 'utf-8'
     soup = bs(res.text, "html.parser")
     date = datetime.datetime.now().strftime("%Y-%m-%d") + "\n"
@@ -26,7 +26,7 @@ def main():
             data += (match.select('th')[i].text + ",")
         print()
         data += "\n"
-    
+
     resolve_data(data)
     demo = ''
     for i in range(len(game_data.away_team_list)):
