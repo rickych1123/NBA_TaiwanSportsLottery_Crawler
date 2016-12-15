@@ -3,21 +3,28 @@ import datetime
 
 
 class SQLManager():
+
     def insert_game_data(
         self, away_team, home_team, away_sprd,
         home_sprd, over_under, away_total_streak,
         home_total_steak, away_season_record,
             home_season_record):
         game_date = datetime.datetime.now()
+        f = open('userInfo.txt', 'r')
+        content = f.read().splitlines()
+        host_URL = content[0]
+        user_ID = content[1]
+        user_passwd = content[2]
+
         # Open database connection
         db = pymysql.connect(
-            "localhost",
-            "root", "", "nba_game_data",
-            charset='utf8')
+            host=host_URL,
+            port=3306, user=user_ID, passwd=user_passwd,
+            db='NBA_Game_Data', charset='utf8')
         # prepare a cursor object using cursor() method
         cursor = db.cursor()
         # Prepare SQL query to INSERT a record into the database.
-        sql = """REPLACE INTO GAME(AWAY_TEAM_NAME,
+        sql = """REPLACE INTO game(AWAY_TEAM_NAME,
                    HOME_TEAM_NAME, AWAY_TEAM_SPRD,
                    HOME_TEAM_SPRD, OVER_UNDER, AWAY_TEAM_TOTAL_STREAK,
                    HOME_TEAM_TOTAL_STREAK, AWAY_SEASON_RECORD,
@@ -39,12 +46,21 @@ class SQLManager():
             db.rollback()
         # disconnect from server
         db.close()
+        f.close()
 
     def update_game_data(
             self, away_team_name, away_team_score, home_team_score, game_date):
+        # db = pymysql.connect(
+        #    "localhost", "root", "", "nba_game_data", charset='utf8')
+        f = open('userInfo.txt', 'r')
+        content = f.read().splitlines()
+        host_URL = content[0]
+        user_ID = content[1]
+        user_passwd = content[2]
         db = pymysql.connect(
-            "localhost", "root", "", "nba_game_data", charset='utf8')
-
+            host=host_URL,
+            port=3306, user=user_ID, passwd=user_passwd,
+            db='NBA_Game_Data', charset='utf8')
         # prepare a cursor object using cursor() method
         cursor = db.cursor()
         # Prepare SQL query to INSERT a record into the database.
